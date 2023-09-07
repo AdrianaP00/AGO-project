@@ -131,16 +131,6 @@ const putConfirmUser = async (req, res) => {
 };
 
 
-const confirmUser = async (req, res, next) => {
-  User
-    .findByIdAndUpdate(req.params.id, { confirmed: true })
-    .then(() => {
-      console.log("bulala que pasa aqui");
-      res.redirect("/");
-    })
-    .catch((error) => console.log("errorazo", error));
-};
-
 module.exports = {
   register,
   login,
@@ -148,6 +138,5 @@ module.exports = {
   getUser,
   putUser,
   deleteUser,
-  confirmUser,
   putConfirmUser,
 };

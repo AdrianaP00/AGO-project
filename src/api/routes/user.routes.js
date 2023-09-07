@@ -9,7 +9,6 @@ const {
   getUser,
   putUser,
   deleteUser,
-  confirmUser,
   putConfirmUser,
 } = require("../controllers/user.controllers");
 
@@ -206,32 +205,6 @@ userRouter.put("/:id", upload.single("img"), putUser);
  *         description: Internal server error
  */
 userRouter.put("/:id/confirm", putConfirmUser);
-
-/**
- * @swagger
- * /user/{id}/confirm:
- *   get:
- *     summary: Confirm a specific User 
- *     tags: [Users]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: User ID
- *     responses:
- *       200:
- *         description: Confirmed User
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               $ref: '#/components/schemas/Users'
- *       500:
- *         description: Internal server error
- */
-userRouter.get("/:id/confirm", confirmUser);
 
 /**
  * @swagger

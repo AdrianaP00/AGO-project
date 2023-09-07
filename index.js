@@ -13,7 +13,6 @@ const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 
 const app = express();
-const chatRoutes = require("./src/api/routes/chat.routes");
 const userRoutes = require("./src/api/routes/user.routes");
 const advRoutes = require("./src/api/routes/advertisement.routes");
 const commentRouter = require("./src/api/routes/comment.routes");
@@ -31,7 +30,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5003",
+        url: "http://localhost:5000",
         description: "AGO API Documentation",
       },
     ],
@@ -57,7 +56,6 @@ app.use(
 );
 
 app.use(express.json());
-app.use("/chat", chatRoutes);
 app.use("/user", userRoutes);
 app.use("/comments", commentRouter);
 app.use("/advertisement", advRoutes);
