@@ -39,4 +39,6 @@ Structure of API with Express.js and documentation with Swagger.
 
 ### Put obtained token in Authorization 
 ![Example](img/authorization.png)
+
+### And now let's use it!
 ![Example](img/obtain.png)
