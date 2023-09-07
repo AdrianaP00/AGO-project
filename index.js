@@ -30,7 +30,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
+        url: "https://ago-project.vercel.app/",
         description: "AGO API Documentation",
       },
     ],
