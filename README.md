@@ -1,4 +1,4 @@
-# Gym-web-back
+# Ago
 
 Structure of API with Express.js and documentation with Swagger.
 
