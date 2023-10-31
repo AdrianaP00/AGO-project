@@ -4,37 +4,22 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    name: { type: String, requires: true, trim: true, minLength: [3, "El nombre necesita al menos 3 caracteres"], 
-    maxLength: [   30,   "Nombre demasiado largo, debe tener menos de 30 caracteres"],
-    },
+    name: { type: String, requires: true, trim: true},
     age: { type: Number, requires: false },
     email: { type: String, required: true, trim: true, unique: true },
     password: { type: String, required: true, trim: true },
     phoneNumber: { type: String, required: false },
     address: { type: String, required: false },
-    specialization: [
-      { type: Schema.Types.ObjectId, required: false, ref: "job" },
-    ], 
+    specialization: [{ type: Schema.Types.ObjectId, required: false, ref: "job" }], 
     yearsOfExperience: { type: Date, required: false },
-    comments: [
-      { type: Schema.Types.ObjectId, required: false, ref: "comment" },
-    ],
+    comments: [{ type: Schema.Types.ObjectId, required: false, ref: "comment" }],
     contacts: [{ type: Schema.Types.ObjectId, required: false, ref: "user" }],
     salary: { type: Number, required: false },
     availability: [{ type: String, required: false }],
-    favoriteCompany: [
-      { type: Schema.Types.ObjectId, required: false, ref: "company" },
-    ], 
+    favoriteCompany: [{ type: Schema.Types.ObjectId, required: false, ref: "company" }],
     role: { type: String, enum: ["ROLE_USER", "ROLE_COMPANY", "ROLE_ADMIN"] },
-    companyTypes: [
-      { type: String, enum: ["SL", "SA", "SAL", "CB", "SCOL", "SCOM", "SCOR"] },
-    ], 
-    img: {
-      type: String,
-      requires: false,
-      default:
-        "https://res.cloudinary.com/dxnzcewsy/image/upload/v1693542647/proyecto%20final/userDefault.png",
-    },
+    companyTypes: [{ type: String, enum: ["SL", "SA", "SAL", "CB", "SCOL", "SCOM", "SCOR"] }],
+    img: { type: String,requires: false,default:"https://res.cloudinary.com/dxnzcewsy/image/upload/v1693542647/proyecto%20final/userDefault.png"},
     petitions: [{ type: Schema.Types.ObjectId, required: false, ref: "form" }],
     confirmed: { type: Boolean, default: false },
   },
