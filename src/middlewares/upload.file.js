@@ -5,7 +5,7 @@ const multer = require("multer");
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "ago",
+    folder: "user profile",
     allowedFormats: ["jpg", "png", "svg", "jpeg", "gif"],
   },
 });
